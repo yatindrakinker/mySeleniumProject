@@ -1,0 +1,11 @@
+
+Logs/*
+Reports/*
+ScreenShot/*
+target/*
+test-output/*
+.classpath
+.metadata/*
+.project
+.settings/*
+/target/

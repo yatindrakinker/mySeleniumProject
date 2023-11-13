@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="WARN">
+<Properties>
+    <Property name="filename">./Logs</Property>
+</Properties>
+    <!-- Where to append/print the logs we define in <Appenders>
+		-->
+    <Appenders>
+
+        <RollingFile name="file" fileName="${filename}/log4jReport.log"
+                     filePattern="${filename}/log4jReport-%d{dd MMM yyyy HH:mm:ss}.log">
+
+            <PatternLayout>
+                <pattern>%d{dd MMM yyyy HH:mm:ss:SSS} [%t] %-5level %logger{36} - %msg%n</pattern>
+            </PatternLayout>
+             <SizeBasedTriggeringPolicy size="100 KB" />
+        </RollingFile>
+
+    </Appenders>
+    <!-- What will be the level of logs that we want to print we define in <Loggers> inside <Root></Root> -->
+    <Loggers>
+
+        <!-- What will be the level (parent) of logs that we want to print we define in <Root level> -->
+        <Root level="warn">
+            <!-- <AppenderRef ref="{name defined in <Console>}"> -->
+            <AppenderRef ref="file"/>
+        </Root>
+    </Loggers>
+</Configuration>
+
